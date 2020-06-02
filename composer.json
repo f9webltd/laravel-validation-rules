@@ -1,0 +1,56 @@
+{
+  "name": "f9webltd/laravel-validation-rules",
+  "description": "Some useful Laravel validation rules",
+  "keywords": [
+    "laravel",
+    "laravel validation rules",
+    "laravel validation",
+    "custom laravel validation",
+    "laravel request validation"
+  ],
+  "homepage": "https://github.com/f9webltd/laravel-validation-rules",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rob Allport",
+      "email": "rob@f9web.co.uk",
+      "homepage": "https://www.f9web.co.uk",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-mbstring": "*",
+    "illuminate/support": "5.8.* || ^6.0 || ^7.0"
+  },
+  "require-dev": {
+      "orchestra/testbench": ">=3.8",
+      "phpunit/phpunit": "^7.0|^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "F9Web\\ValidationRules\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "F9Web\\ValidationRules\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "F9Web\\ValidationRules\\ValidationRulesServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
