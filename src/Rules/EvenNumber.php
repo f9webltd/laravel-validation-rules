@@ -23,6 +23,6 @@ class EvenNumber extends Rule
             return false;
         }
 
-        return (int)$value % 2 === 0;
+        return (int) $value % 2 === 0;
     }
 }

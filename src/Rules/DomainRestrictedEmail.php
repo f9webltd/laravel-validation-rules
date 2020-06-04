@@ -37,7 +37,7 @@ class DomainRestrictedEmail extends Rule
             return false;
         }
 
-        $domain = (string)explode('@', $value)[1];
+        $domain = (string) explode('@', $value)[1];
 
         return in_array($domain, $this->validDomains);
     }

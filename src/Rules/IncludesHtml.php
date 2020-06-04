@@ -19,6 +19,6 @@ class IncludesHtml extends Rule
     {
         $this->setAttribute($attribute);
 
-        return strip_tags((string)$value) !== $value;
+        return strip_tags((string) $value) !== $value;
     }
 }

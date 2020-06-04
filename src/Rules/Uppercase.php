@@ -24,6 +24,6 @@ class Uppercase extends Rule
             return false;
         }
 
-        return mb_strtoupper($value, 'UTF-8') === (string)$value;
+        return mb_strtoupper($value, 'UTF-8') === (string) $value;
     }
 }

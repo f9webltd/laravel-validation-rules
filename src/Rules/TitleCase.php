@@ -24,6 +24,6 @@ class TitleCase extends Rule
             return false;
         }
 
-        return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8') === (string)$value;
+        return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8') === (string) $value;
     }
 }

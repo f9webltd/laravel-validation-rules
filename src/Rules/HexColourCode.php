@@ -35,7 +35,7 @@ class HexColourCode extends Rule
             ? '/^#([a-fA-F0-9]{6})$/'
             : '/^#([a-fA-F0-9]{3})$/';
 
-        return (bool)preg_match($pattern, $value);
+        return (bool) preg_match($pattern, $value);
     }
 
     /**

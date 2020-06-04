@@ -1,1 +1,8 @@
-preset: psr12
+preset: laravel
+
+disabled:
+    - alpha_ordered_imports
+
+enabled:
+    - single_import_per_statement
+    - whitespace_after_comma_in_array
