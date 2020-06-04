@@ -22,7 +22,7 @@ class Base64EncodedString extends Rule
 
         $decoded = base64_decode($value, true);
 
-        if ($decoded === false || $decoded === 0) {
+        if ($decoded === false) {
             return false;
         }
 
