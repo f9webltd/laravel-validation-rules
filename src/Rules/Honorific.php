@@ -6,7 +6,6 @@ namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
 use F9Web\ValidationRules\Support\Honorifics;
-
 use function in_array;
 use function str_replace;
 use function strtolower;

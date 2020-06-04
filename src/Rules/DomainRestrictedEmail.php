@@ -7,7 +7,6 @@ namespace F9Web\ValidationRules\Rules;
 use F9Web\ValidationRules\Exceptions\DomainWhitelistException;
 use F9Web\ValidationRules\Rule;
 use Illuminate\Support\Str;
-
 use function __;
 use function array_map;
 use function explode;
@@ -33,7 +32,7 @@ class DomainRestrictedEmail extends Rule
             throw new DomainWhitelistException('Zero domains have been whitelisted using the "validDomains()" method');
         }
 
-        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+        if (! filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
 

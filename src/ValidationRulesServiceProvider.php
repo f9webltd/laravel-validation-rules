@@ -3,7 +3,6 @@
 namespace F9Web\ValidationRules;
 
 use Illuminate\Support\ServiceProvider;
-
 use function resource_path;
 
 class ValidationRulesServiceProvider extends ServiceProvider

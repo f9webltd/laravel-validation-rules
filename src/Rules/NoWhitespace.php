@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
-
 use function preg_match;
 
 class NoWhitespace extends Rule

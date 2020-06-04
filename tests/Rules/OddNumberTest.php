@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Tests;
 
 use F9Web\ValidationRules\Rules\OddNumber;
-use stdClass;
 
 class OddNumberTest extends TestCase
 {

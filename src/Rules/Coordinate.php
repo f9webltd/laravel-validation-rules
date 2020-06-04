@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
-
 use function explode;
 use function preg_match;
 use function trim;
@@ -14,7 +13,7 @@ class Coordinate extends Rule
 {
     /**
      * Determine if the validation rule passes.
-     * Validates a lat/lng co ordinate like "47.1,179.1"
+     * Validates a lat/lng co ordinate like "47.1,179.1".
      *
      * @param  string  $attribute
      * @param  mixed  $value
@@ -26,7 +25,7 @@ class Coordinate extends Rule
 
         $parts = explode(',', $value);
 
-        if ($parts === [] || !isset($parts[1])) {
+        if ($parts === [] || ! isset($parts[1])) {
             return false;
         }
 

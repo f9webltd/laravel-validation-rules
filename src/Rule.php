@@ -6,7 +6,6 @@ namespace F9Web\ValidationRules;
 
 use Illuminate\Contracts\Validation\Rule as BaseRule;
 use Illuminate\Support\Str;
-
 use function __;
 use function class_basename;
 use function get_called_class;

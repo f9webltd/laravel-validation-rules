@@ -6,7 +6,6 @@ namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
 use Illuminate\Support\Str;
-
 use function __;
 use function preg_match;
 
@@ -27,7 +26,7 @@ class HexColourCode extends Rule
     {
         $this->setAttribute($attribute);
 
-        if ($this->includePrefix && !Str::startsWith($value, '#')) {
+        if ($this->includePrefix && ! Str::startsWith($value, '#')) {
             return false;
         }
 

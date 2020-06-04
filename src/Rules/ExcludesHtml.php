@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
-
 use function strip_tags;
 
 class ExcludesHtml extends Rule

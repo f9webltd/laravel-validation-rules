@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
-
 use function is_string;
 use function mb_strtoupper;
 
@@ -20,7 +19,7 @@ class Uppercase extends Rule
     {
         $this->setAttribute($attribute);
 
-        if (!is_string($value)) {
+        if (! is_string($value)) {
             return false;
         }
 

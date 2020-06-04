@@ -7,7 +7,6 @@ namespace F9Web\ValidationRules\Rules;
 use F9Web\ValidationRules\Exceptions\StringContainsException;
 use F9Web\ValidationRules\Rule;
 use Illuminate\Support\Str;
-
 use function __;
 use function array_map;
 use function collect;
@@ -37,7 +36,7 @@ class StringContains extends Rule
 
         $matched = collect($this->phrases)->reject(
             function ($phrase) use ($value) {
-                return !Str::contains($value, $phrase);
+                return ! Str::contains($value, $phrase);
             }
         );
 

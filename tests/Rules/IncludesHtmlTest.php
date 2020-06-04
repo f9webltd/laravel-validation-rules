@@ -6,7 +6,7 @@ namespace F9Web\ValidationRules\Tests;
 
 use F9Web\ValidationRules\Rules\IncludesHtml;
 
-class IncludesHtmlTestTest extends TestCase
+class IncludesHtmlTest extends TestCase
 {
     public function setUp(): void
     {
