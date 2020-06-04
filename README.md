@@ -1,3 +1,4 @@
+[![Latest Stable Version](https://poser.pugx.org/f9webltd/laravel-validation-rules/v)](https://packagist.org/packages/f9webltd/laravel-validation-rules)
 [![Scrutinizer coverage (GitHub/BitBucket)](https://img.shields.io/scrutinizer/coverage/g/f9webltd/laravel-validation-rules)]()
 [![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/f9webltd/laravel-validation-rules)]()
 [![Build Status](https://travis-ci.org/f9webltd/laravel-validation-rules.svg)](https://travis-ci.org/f9webltd/laravel-validation-rules)
@@ -52,6 +53,13 @@ Alternatively use the rule directly with a [Laravel form request object](https:/
 - [`HexColourCode`](#hexcolourcode)
 - [`Honorific`](#honorific)
 - [`IncludesHtml`](#includeshtml)
+- [`NoWhitespace`](#nowhitespace)
+- [`OddNumber`](#oddnumber)
+- [`StringContains`](#stringcontains)
+- [`StrongPassword`](#strongpassword)
+- [`TitleCase`](#titlecase)
+- [`UKMobilePhone`](#ukmobilephone)
+- [`Uppercase`](#uppercase)
 
 ### `Base64EncodedString`
 
@@ -120,6 +128,112 @@ Ensure the passed attribute is a valid honorific, omitting appended dots. The li
 ### `IncludesHtml`
 
 Ensure the passed attribute contains HTML.
+
+### `NoWhitespace`
+
+Ensure the passed attribute contains no whitespace.
+
+### `OddNumber`
+
+Ensure the passed attribute is an odd number.
+
+### `StringContains`
+
+Ensure the given attribute contains the provided strings.
+
+Minimum usage example to ensure the attribute in question contains the string `php` or `laravel`:
+
+```php
+use F9Web\ValidationRules\Rules\StringContains;
+
+// ...
+
+$request->validate([
+    'description' => [
+        'required', 
+        (new StringContains())->phrases([
+            'laravel',
+            'php',
+        ]),
+    ],
+]);
+``` 
+
+Optionally force the string to contain *all* provided phrases:
+
+```php
+use F9Web\ValidationRules\Rules\StringContains;
+
+// ...
+
+$request->validate([
+    'description' => [
+        'required', 
+        (new StringContains())->phrases([
+            'laravel',
+            'php',
+        ])->strictly(),
+    ],
+]);
+``` 
+The validation message will include the list phrases based upon the provided configuration.
+
+### `StrongPassword`
+
+Ensure the given attribute matches the provided conditions. 
+
+Minimum usage example to ensure the attribute:
+ 
+- is a minimum of eight characters in length
+- contains upper and lowercase characters
+- contains at least one number
+
+```php
+use F9Web\ValidationRules\Rules\StrongPassword;
+
+// ...
+
+$request->validate([
+    'password' => [
+        'required', 
+        (new StrongPassword()),
+    ],
+]);
+``` 
+
+Additional methods are available.
+
+```php
+use F9Web\ValidationRules\Rules\StrongPassword;
+
+// ...
+
+$request->validate([
+    'password' => [
+        'required', 
+        (new StrongPassword())
+            ->forceUppercaseCharacters()
+            ->forceLowercaseCharacters(false)
+            ->forceNumbers()
+            ->forceSpecialCharacters()
+            // ->withSpecialCharacters('£$*%^'),
+    ],
+]);
+``` 
+
+The default special characters are `!@#$%^&*()\-_=+{};:,<."£~?|>`. Optionally the `withSpecialCharacters()` method can be used to define a custom list.
+
+### `TitleCase`
+
+Ensure the provided attribute is [title case](https://laravel.com/docs/7.x/helpers#method-title-case).
+
+### `UKMobilePhone`
+
+Ensure the provided attribute is a valid UK mobile telephone number.
+
+### `Uppercase`
+
+Ensure the provided attribute is entirely uppercase.
 
 ## Contribution
 

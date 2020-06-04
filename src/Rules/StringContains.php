@@ -42,7 +42,6 @@ class StringContains extends Rule
 
         if ($this->mustContainAllPhrases) {
             return Str::containsAll($value, $this->phrases);
-            // return $matched->count() === count($this->phrases);
         }
 
         return $matched->isNotEmpty();

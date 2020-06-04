@@ -134,6 +134,8 @@ class StrongPassword extends Rule
      */
     public function withSpecialCharacters(string $characters): self
     {
+        $this->forceSpecialCharacters();
+
         $this->specialCharacters = $characters;
 
         return $this;
