@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace F9Web\ValidationRules\Rules;
 
 use F9Web\ValidationRules\Rule;
+
 use function __;
 use function mb_strlen;
 use function preg_match_all;
@@ -38,24 +39,31 @@ class StrongPassword extends Rule
     {
         $this->setAttribute($attribute);
 
-        $containsUppercase = '/[A-Z]/';
-        $containsLowercase = '/[a-z]/';
-        $specialCharacters = '/['.$this->specialCharacters.']/';
-        $numbers = '/[0-9]/';
-
-        if ($this->mustIncludeUppercaseCharacters && preg_match_all($containsUppercase, $value, $o) === 0) {
+        if (
+            $this->mustIncludeUppercaseCharacters &&
+            preg_match_all('/[A-Z]/', $value, $o) === 0
+        ) {
             return false;
         }
 
-        if ($this->mustIncludeLowercaseCharacters && preg_match_all($containsLowercase, $value, $o) === 0) {
+        if (
+            $this->mustIncludeLowercaseCharacters &&
+            preg_match_all('/[a-z]/', $value, $o) === 0
+        ) {
             return false;
         }
 
-        if ($this->mustIncludeSpecialCharacters && preg_match_all($specialCharacters, $value, $o) === 0) {
+        if (
+            $this->mustIncludeSpecialCharacters &&
+            preg_match_all('/['.$this->specialCharacters.']/', $value, $o) === 0
+        ) {
             return false;
         }
 
-        if ($this->mustIncludeNumbers && preg_match_all($numbers, $value, $o) === 0) {
+        if (
+            $this->mustIncludeNumbers &&
+            preg_match_all('/[0-9]/', $value, $o) === 0
+        ) {
             return false;
         }
 
@@ -152,6 +160,8 @@ class StrongPassword extends Rule
     public function message(): string
     {
         $key = 'f9web-validation-rules::messages.'.$this->getMessageKey();
+
+        $message = [];
 
         $message[] = __(
             $key.'.base',

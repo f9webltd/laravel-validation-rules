@@ -45,8 +45,8 @@ class TitleCaseTest extends TestCase
     public function sampleDataProvider(): array
     {
         return [
-            ['It’s Not A Bug. It’s A Feature!', true],
-            ['It’s not a bug. It’s a feature!', false],
+            ['Not A Bug, Ok?', true],
+            ['not a bug, OK?', false],
             ['Éasy money', false],
             ['Éasy Money', true],
             ['A', true],
