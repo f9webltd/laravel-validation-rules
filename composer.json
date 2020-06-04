@@ -1,6 +1,6 @@
 {
   "name": "f9webltd/laravel-validation-rules",
-  "description": "Some useful Laravel validation rules",
+  "description": "A collection of useful Laravel validation rules",
   "keywords": [
     "laravel",
     "laravel validation rules",
@@ -21,6 +21,7 @@
   "require": {
     "php": "^7.2",
     "ext-mbstring": "*",
+    "illuminate/contracts": "5.8.* || ^6.0 || ^7.0",
     "illuminate/support": "5.8.* || ^6.0 || ^7.0"
   },
   "require-dev": {

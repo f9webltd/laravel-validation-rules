@@ -18,7 +18,13 @@ PHP >= 7.2, Laravel `>=5.8 | 6.x | 7.x`.
 composer require f9webltd/laravel-validation-rules
 ```
 
-The package will automatically register itself.
+To publish the package validation message translations:
+
+``` bash
+php artisan vendor:publish --provider="F9Web\ValidationRules\ValidationRulesServiceProvider"
+```
+
+Published translations are available at `resources/lang/vendor/f9web-validation-rules/messages.php`.
 
 ## Usage
 
