@@ -3,8 +3,6 @@
 return [
     'uppercase'               => 'The :attribute field must only contain uppercase characters',
     'title-case'              => 'The :attribute must be in title case form',
-    'even-number'             => 'The :attribute must be an even number',
-    'odd-number'              => 'The :attribute must be an odd number',
     'domain-restricted-email' => 'The :attribute must be an email address ending with any of the following :plural: :domains',
     'excludes-html'           => 'The :attribute contains html',
     'includes-html'           => 'The :attribute must contain html',
@@ -29,4 +27,8 @@ return [
     ],
     'u-k-mobile-phone'        => 'The :attribute must be a valid UK mobile number',
     'base64-encoded-string'   => 'The :attribute must be a valid base64 encoded string',
+    'number-parity'           => [
+        'even' => 'The :attribute must be an even number',
+        'odd'  => 'The :attribute must be an odd number',
+    ],
 ];

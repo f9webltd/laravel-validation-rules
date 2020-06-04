@@ -48,13 +48,12 @@ Alternatively use the rule directly with a [Laravel form request object](https:/
 - [`Base64EncodedString`](#base64encodedstring)
 - [`Coordinate`](#coordinate)
 - [`DomainRestrictedEmail`](#domainrestrictedemail)
-- [`EvenNumber`](#evennumber)
 - [`ExcludesHtml`](#excludeshtml)
 - [`HexColourCode`](#hexcolourcode)
 - [`Honorific`](#honorific)
 - [`IncludesHtml`](#includeshtml)
 - [`NoWhitespace`](#nowhitespace)
-- [`OddNumber`](#oddnumber)
+- [`NumberParity`](#numberparity)
 - [`StringContains`](#stringcontains)
 - [`StrongPassword`](#strongpassword)
 - [`TitleCase`](#titlecase)
@@ -93,10 +92,6 @@ $request->validate([
 
 The validation message will include the list of whitelisted domains based upon the provided configuration.
 
-### `EvenNumber`
-
-Ensure the passed attribute is an even number.
-
 ### `ExcludesHtml`
 
 Ensure the passed attribute does not contain HTML.
@@ -133,9 +128,39 @@ Ensure the passed attribute contains HTML.
 
 Ensure the passed attribute contains no whitespace.
 
-### `OddNumber`
+### `NumberParity`
 
-Ensure the passed attribute is an odd number.
+Validate the number parity.
+
+An odd number:
+
+```php
+use F9Web\ValidationRules\Rules\NumberParity;
+
+// ...
+
+$request->validate([
+    'amount' => [
+        'required', 
+        (new NumberParity())->odd(),
+    ],
+]);
+``` 
+
+An even number:
+
+```php
+use F9Web\ValidationRules\Rules\NumberParity;
+
+// ...
+
+$request->validate([
+    'amount' => [
+        'required', 
+        (new NumberParity())->even(),
+    ],
+]);
+``` 
 
 ### `StringContains`
 
