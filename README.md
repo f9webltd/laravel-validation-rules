@@ -7,11 +7,11 @@
 
 # Useful Laravel Validation Rules
 
-A collection of Laravel validation rules.
+A collection of useful Laravel validation rules.
 
 ## Requirements
 
-PHP >= 7.2, Laravel `>=5.8 | 6.x | 7.x`.
+PHP >= 7.2, Laravel `>=5.8 | 6.x | 7.x | 8.x`.
 
 ## Installation
 
