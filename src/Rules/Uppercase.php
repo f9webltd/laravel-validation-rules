@@ -20,7 +20,7 @@ class Uppercase extends Rule
     {
         $this->setAttribute($attribute);
 
-        if (!is_string($value)) {
+        if (! is_string($value)) {
             return false;
         }
 
