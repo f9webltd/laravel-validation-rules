@@ -18,6 +18,10 @@ class NoWhitespace extends Rule
     {
         $this->setAttribute($attribute);
 
+        if (null === $value) {
+            return true;
+        }
+
         return preg_match('/\s/', $value) === 0;
     }
 }

@@ -1,4 +1,4 @@
-[![Latest Stable Version](https://poser.pugx.org/f9webltd/laravel-validation-rules/v)](https://packagist.org/packages/f9webltd/laravel-validation-rules)
+[![Latest Stable Version](https://img.shields.io/packagist/v/f9webltd/laravel-validation-rules)](https://packagist.org/packages/f9webltd/laravel-validation-rules)
 [![Scrutinizer coverage (GitHub/BitBucket)](https://img.shields.io/scrutinizer/coverage/g/f9webltd/laravel-validation-rules)]()
 [![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/f9webltd/laravel-validation-rules)]()
 [![Build Status](https://travis-ci.org/f9webltd/laravel-validation-rules.svg)](https://travis-ci.org/f9webltd/laravel-validation-rules)
